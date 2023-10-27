@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import SettingsModals from "../models/SettingsModals";
 
 
-const ModalProvider = () => {
+export const ModalProvider = () => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
