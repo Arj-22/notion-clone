@@ -131,7 +131,7 @@ const Item = ({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-60" align="start" side="right" forceMount>
                     <DropdownMenuItem onClick={onArchive}>
-                        <Trash className="h-4 w-2 mr-2"/>
+                        <Trash className="h-4 w-4 mr-2"/>
                         Delete
                     </DropdownMenuItem>
                     <DropdownMenuSeparator/>
