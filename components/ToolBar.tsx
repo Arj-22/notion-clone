@@ -8,7 +8,7 @@ import { ElementRef, useRef, useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import TextareaAutoSize from "react-textarea-autosize";
-
+import { useCoverImage } from "@/hooks/use-cover-image";
 
 interface ToolBarProps{
     initialData : Doc<"documents">;
@@ -26,6 +26,8 @@ const ToolBar = ({
 
     const update = useMutation(api.documents.update);
     const removeIcon = useMutation(api.documents.removeIcon);
+
+    const coverImage = useCoverImage();
 
     const enableInput = () =>{
         if(preview) return;
@@ -46,7 +48,6 @@ const ToolBar = ({
             title: value || "Untitled"
         })
     }
-
 
     const onKeyDown = (
         event: React.KeyboardEvent<HTMLTextAreaElement>
@@ -71,6 +72,7 @@ const ToolBar = ({
             id: initialData._id,
         })
     }
+
   return (
     <div className="pl-[54px] group relative:">
         {!!initialData.icon && !preview && (
@@ -102,7 +104,7 @@ const ToolBar = ({
             )}
             {!initialData.coverImage && !preview &&(
                 <Button
-                    onClick={() =>{}}
+                    onClick={coverImage.onOpen}
                     className="text-muted-foreground text-xs"
                     variant="outline"
                     size="sm"

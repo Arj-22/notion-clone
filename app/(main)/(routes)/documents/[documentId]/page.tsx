@@ -1,5 +1,6 @@
 "use client"
 
+import Cover from "@/components/Cover"
 import ToolBar from "@/components/ToolBar"
 import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"
@@ -33,6 +34,7 @@ const DocumentIdPage = ({
   }
   return (
     <div className="pb-40">
+      <Cover/>
       <div className="h-[35vh]"/>
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <ToolBar initialData={document}/>
